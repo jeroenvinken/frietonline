@@ -1,0 +1,598 @@
+@charset 'UTF-8';
+@import url("font-awesome.min.css");
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+
+/*
+        Halcyonic 3.1 by HTML5 UP
+        html5up.net | @n33co
+        Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/*********************************************************************************/
+/* Global                                                                        */
+/*********************************************************************************/
+
+/* Basic */
+
+body
+{
+    background: #D4D9DD url('images/bg03.jpg');
+    font: .9em Georgia, "Times New Roman", Sans-Serif;
+}
+
+body, input, textarea, select
+{
+    color: #474f51;
+    //font-size: 13.5pt;
+    //font-family: 'Yanone Kaffeesatz';
+    line-height: 1.85em;
+    font-weight: 300;
+}
+
+ul, ol, p, dl
+{
+    margin: 0 0 2em 0;
+}
+
+a
+{
+    text-decoration: underline;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+section > :last-child, .last-child
+{
+    margin-bottom: 0 !important;
+    width: 90%;
+}
+
+/* Multi-use */
+
+.link-list
+{
+}
+
+.link-list li
+{
+    padding: 0.2em 0 0.2em 0;
+}
+
+.link-list li:first-child
+{
+    padding-top: 0 !important;
+    border-top: 0 !important;
+}
+
+.link-list li:last-child
+{
+    padding-bottom: 0 !important;
+    border-bottom: 0 !important;
+}
+
+#content .link-list li
+{
+    border-bottom: solid 1px #e2e6e8;
+}
+
+#footer .link-list li
+{
+    border-top: solid 1px #e0e4e6;
+    border-bottom: solid 1px #b5bec3;
+}
+
+.quote-list
+{
+}
+
+.quote-list li
+{
+    padding: 1em 0 1em 0;
+    overflow: hidden;
+}
+
+.quote-list li:first-child
+{
+    padding-top: 0 !important;
+    border-top: 0 !important;
+}
+
+.quote-list li:last-child
+{
+    padding-bottom: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.quote-list li img
+{
+    float: left;
+}
+
+.quote-list li p
+{
+    margin: 0 0 0 90px;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.quote-list li span
+{
+    display: block;
+    margin-left: 90px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+#content .quote-list li
+{
+    border-bottom: solid 1px #e2e6e8;
+}
+
+#footer .quote-list li
+{
+    border-top: solid 1px #e0e4e6;
+    border-bottom: solid 1px #b5bec3;
+}
+
+.check-list
+{
+}
+
+.check-list li
+{
+    padding: 0.7em 0 0.7em 45px;
+    font-size: 1.2em;
+    background: url('images/icon-checkmark.png') 0px 1.05em no-repeat;
+}
+
+.check-list li:first-child
+{
+    padding-top: 0 !important;
+    border-top: 0 !important;
+    background-position: 0 0.3em;
+}
+
+.check-list li:last-child
+{
+    padding-bottom: 0 !important;
+    border-bottom: 0 !important;
+}
+
+#content .check-list li
+{
+    border-bottom: solid 1px #e2e6e8;
+}
+
+#footer .check-list li
+{
+    border-top: solid 1px #e0e4e6;
+    border-bottom: solid 1px #b5bec3;
+}
+
+.feature-image
+{
+    display: block;
+    margin: 0 0 2em 0;
+    outline: 0;
+}
+
+.feature-image img
+{
+    display: block;
+    width: 100%;
+}
+
+.bordered-feature-image
+{
+    display: block;
+    width: 90%;    
+    //max-height: 229px;
+    //background: #fff url('images/bg04.png');
+    //padding: 7px;
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.15);
+    margin: 0 0 0.7em 0;
+    outline: 0;
+    max-height: 270px;
+    border: 7px solid white;
+    overflow:hidden;
+}
+
+.bordered-feature-image img
+{
+    display: block;
+    width: 100%;
+    //max-height: 270px;
+}
+
+.button-big
+{
+    display: inline-block;
+    background: #ed391b;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.75em;
+    font-weight: 300;
+    padding: 15px 45px 15px 45px;
+    outline: 0;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.75), inset 0px 2px 0px 0px rgba(255,192,192,0.5), inset 0px 0px 0px 2px rgba(255,96,96,0.85), 3px 3px 3px 1px rgba(0,0,0,0.15);
+    background-image: -moz-linear-gradient(top, #ed391b, #ce1a00);
+    background-image: -webkit-linear-gradient(top, #ed391b, #ce1a00);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ed391b), to(#ce1a00));
+    background-image: -ms-linear-gradient(top, #ed391b, #ce1a00);
+    background-image: -o-linear-gradient(top, #ed391b, #ce1a00);
+    background-image: linear-gradient(top, #ed391b, #ce1a00);
+    text-shadow: -1px -1px 1px rgba(0,0,0,0.5);
+}
+
+.button-big:hover
+{
+    background: #fd492b;
+    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.75), inset 0px 2px 0px 0px rgba(255,192,192,0.5), inset 0px 0px 0px 2px rgba(255,96,96,0.85), 3px 3px 3px 1px rgba(0,0,0,0.15);
+    background-image: -moz-linear-gradient(top, #fd492b, #de2a10);
+    background-image: -webkit-linear-gradient(top, #fd492b, #de2a10);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fd492b), to(#de2a10));
+    background-image: -ms-linear-gradient(top, #fd492b, #de2a10);
+    background-image: -o-linear-gradient(top, #fd492b, #de2a10);
+    background-image: linear-gradient(top, #fd492b, #de2a10);
+}
+
+.button-big:active
+{
+    background: #ce1a00;
+    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.75), inset 0px 2px 0px 0px rgba(255,192,192,0.5), inset 0px 0px 0px 2px rgba(255,96,96,0.85), 3px 3px 3px 1px rgba(0,0,0,0.15);
+    background-image: -moz-linear-gradient(top, #ce1a00, #ed391b);
+    background-image: -webkit-linear-gradient(top, #ce1a00, #ed391b);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ce1a00), to(#ed391b));
+    background-image: -ms-linear-gradient(top, #ce1a00, #ed391b);
+    background-image: -o-linear-gradient(top, #ce1a00, #ed391b);
+    background-image: linear-gradient(top, #ce1a00, #ed391b);
+}
+
+#logo
+{
+    margin-top: 30px;
+}
+
+.tableMenu {
+    overflow:hidden;
+    border:1px solid #d3d3d3;
+    background:#fefefe;
+    width:100%;
+    margin:5% auto 0;
+    -moz-border-radius:5px; /* FF1+ */
+    -webkit-border-radius:5px; /* Saf3-4 */
+    border-radius:5px;
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.tableMenu th {padding:18px 28px 18px; text-align: center;}
+
+.tableMenu th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb; height: 12.5px; border-bottom: 1px solid #c8cdcf;}
+
+.tableMenu td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0; text-align: center;}
+
+.tableMenu tr.odd-row td {background:#f6f6f6;}
+
+.tableMenu td.first, th.first {text-align:left}
+
+.tableMenu td.last {border-right:none;}
+
+/*
+Background gradients are completely unnecessary but a neat effect.
+*/
+
+.tableMenu td {
+    vertical-align: top;
+    padding:15px;
+    background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
+    background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
+}
+
+.tableMenu tr.odd-row td {
+    background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
+    background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
+}
+
+.tableMenu th {
+    background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
+    background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
+}
+
+/*
+I know this is annoying, but we need additional styling so webkit will recognize rounded corners on background elements.
+Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
+
+And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
+*/
+
+.tableMenu tr:first-child th.first {
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-left-radius:5px; /* Saf3-4 */
+}
+
+.tableMenu tr:first-child th.last {
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-right-radius:5px; /* Saf3-4 */
+}
+
+.tableMenu tr:last-child td.first {
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-bottom-left-radius:5px; /* Saf3-4 */
+}
+
+.tableMenu tr:last-child td.last {
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-bottom-right-radius:5px; /* Saf3-4 */
+}
+
+.menuPaddingTop {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.onlangsbekekenimage {
+
+}
+
+.onlangsbekekenimage img{
+    display: block;                   
+    max-height: 150px;
+    background: #fff url('images/bg04.png');
+    padding: 3px;
+    box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.15);
+    margin: 0 0 0.7em 0;
+    outline: 0;
+    overflow: hidden;
+}
+
+.tableWithPadding td {
+    padding-bottom: 15px;
+}
+
+select {
+    //font-size: 105%;
+    margin-left: 8px;
+    padding:8px;
+    border-radius: 5px;
+    min-width: 100%;
+}
+
+.inputNieuwsbrief {
+    font-size: 105%;
+    padding: 8px;
+    padding-left: 12px;
+    margin-top: 10px;
+}
+
+.prijsSamenvatting td {
+    padding-bottom: 8px;
+}
+
+/*********************************************************************************/
+/* Icons                                                                         */
+/*********************************************************************************/
+
+.icon {
+    position: relative;
+    text-decoration: none;
+}
+
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+}
+
+.icon > .label {
+    display: none;
+}
+
+/* Button */
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button
+{
+    -webkit-appearance: none;
+    position: relative;
+    display: inline-block;
+    background: #F2472A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 800;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    margin-top:10px; // 10/11/16 add
+    -moz-transition: background-color .25s ease-in-out;
+    -webkit-transition: background-color .25s ease-in-out;
+    -o-transition: background-color .25s ease-in-out;
+    -ms-transition: background-color .25s ease-in-out;
+    transition: background-color .25s ease-in-out;
+}
+input[type="submit"] {
+    margin-right:15px;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+.button:hover
+{
+    background: #10a0d5;
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+.button:active
+{
+    background: #20b0e5;
+}
+
+.button.icon
+{
+}
+
+.button.icon:before
+{
+    position: relative;
+}
+
+input[type="button"].alt,
+input[type="submit"].alt,
+input[type="reset"].alt,
+.button.alt
+{
+    background: #f1f1f1;
+    background: rgba(0,0,0,0.05);
+    color: #444;
+}
+
+input[type="button"].alt:hover,
+input[type="submit"].alt:hover,
+input[type="reset"].alt:hover,
+.button.alt:hover
+{
+    background: #e8e8e8;
+    background: rgba(0,0,0,0.085);
+}
+
+input[type="button"].alt:active,
+input[type="submit"].alt:active,
+input[type="reset"].alt:active,
+.button.alt:active
+{
+    background: #e4e4e4;
+    background: rgba(0,0,0,0.15);
+}
+
+.button a {
+    color: white !important;    
+}
+
+.colorblock {    
+    float:left;
+    margin: 5px 5px 8px 9px;
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    cursor: pointer;
+}
+
+.selectedColor {
+    border: 2px solid black;
+}
+
+.toegevoegd {
+    background-color: rgba(0,255,0,0.5);
+    /*animation: slideup 7s;      
+    -moz-animation: slideup 7s;      
+    -webkit-animation: slideup 7s;      
+    -o-animation: slideup 7s;   */
+    position: relative;
+    //overflow:hidden;
+    height: 50px;
+    //width: 100%;
+    font-weight: bold;
+    font-size: 120%;
+    color:white;
+}
+
+.toegevoegd p{
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right:auto;
+    width: 500px;
+        
+    
+}
+
+@keyframes slideup
+{
+    0%   {height:50px;}
+    75%  {height:50px;}
+    100% {height:0px;}
+}
+
+@-moz-keyframes slideup
+{
+    0%   {height:50px;}
+    75%  {height:50px;}
+    100% {height:0px;}
+}
+
+@-webkit-keyframes slideup
+{
+    0%   {height:50px;}
+    75%  {height:50px;}
+    100% {height:0px;}
+}
+
+@-o-keyframes slideup
+{
+    0%   {height:50px;}
+    75%  {height:50px;}
+    100% {height:0px;}
+}
+
+.zoekinput {
+    line-height: 200%;
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    font-size: 120%;    
+}
+
+.pdfImage img{
+    width: 150px;
+    height: 60px;
+    
+}
+
+.tableMenu input {
+    width:auto;
+    min-width: 45%;
+}
+
+.wrapperdiv {
+    width: 100%;
+    
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+.innerleft {
+    width: 45%;
+    float:left; /* add this */
+    
+}
+.innerright {
+    padding-left: 10%;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+.tablepad10 td {    
+    padding: 5px;
+    padding-right: 10%;
+}
+
+.dropOptieOnderdeel {    
+    max-width: 80%;
+    min-width: 50% !important;
+}
+
+.shopimg {
+    max-height: 270px;
+    overflow: hidden;
+}
