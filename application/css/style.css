@@ -596,3 +596,16 @@ input[type="reset"].alt:active,
     max-height: 270px;
     overflow: hidden;
 }
+
+.blur {
+    width:100%;
+    height:100%;
+    position: absolute;
+    background-image:url('http://localhost:88/frietonline/application/images/banner.png') !important;
+    background-size:cover;
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -ms-filter: blur(4px);
+    -o-filter: blur(4px);
+    filter: blur(4px);
+}

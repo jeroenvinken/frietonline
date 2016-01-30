@@ -12,7 +12,7 @@
                 <nav id="nav">
                     <?php
                     echo anchor('index/index', 'Home');                   
-                    echo anchor('index/menu', 'Menu');
+                    echo anchor('index/kaart', 'Kaart');
                     echo anchor('index/contact', 'Contact');
                     ?>                    
 
