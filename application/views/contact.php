@@ -16,7 +16,7 @@
                 <!--<div class="12u">
                     <img src="<?php //echo base_url() . APPPATH; ?>images/banner.png" width="100%"/>
                 </div>-->
-                <div class="7u">
+                <div class="12u">
                    <?php
                     foreach ($teksten as $tekst) {
                         if ($tekst->naam == "Contact openingsuren") {
@@ -24,7 +24,8 @@
                         }
                     }
                     ?>
-                          
+                      
+                    <iframe src="https://maps.google.it/maps?q=<?php echo global_locatie; ?>&output=embed" width="100%" height="460"></iframe>
                 </div>
             </div>
         </div>

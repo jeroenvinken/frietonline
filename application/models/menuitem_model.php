@@ -10,8 +10,8 @@ class Menuitem_model extends CI_Model {
         $this->db->order_by('id', 'asc');
 
         $query = $this->db->get('menuitem');
-        $maten = $query->result();
-        return $maten;
+        $producten = $query->result();
+        return $producten;
     }
     
     function getAllByCategorieId($catId) {

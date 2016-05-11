@@ -39,7 +39,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 /* custom variables - Aan te passen per gebruiker (zou ook in DB kunnen maar das een extra transactie) */
 define('global_bedrijfsnaam', 'Frietonline');
-
+define('global_locatie' , "Molenvest+26,+2200+Herentals");
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

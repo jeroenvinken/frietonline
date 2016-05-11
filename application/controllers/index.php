@@ -50,10 +50,16 @@ class Index extends CI_Controller {
     public function kaart() {
         $data['title'] = global_bedrijfsnaam . ' - Kaart';
         $data['pagina'] = 'index';
-
+         
+        
         $this->load->model('tekst_model');
         $teksten = $this->tekst_model->getAllByPage("kaart.php");
         $data['teksten'] = $teksten;
+        
+        $this->load->model('menuitem_model');
+        $producten = $this->menuitem_model->getAll();
+        $data['producten'] = $producten;
+        
 
         $partials = array('header' => 'main_header', 'content' => 'kaart', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
