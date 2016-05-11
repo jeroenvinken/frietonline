@@ -17,14 +17,14 @@
                     <img src="<?php //echo base_url() . APPPATH; ?>images/banner.png" width="100%"/>
                 </div>-->
                 <div class="7u">
-                    <h2>Frietonline</h2>                
-                    <?php
+                   <?php
                     foreach ($teksten as $tekst) {
-                        if ($tekst->naam == "Home tekst") {
+                        if ($tekst->naam == "Contact openingsuren") {
                             echo '<p style="font-size:' . $tekst->tekstgrootte . '%">' . $tekst->tekst . '</p>';
                         }
                     }
-                    ?>                
+                    ?>
+                          
                 </div>
             </div>
         </div>

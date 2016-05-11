@@ -17,14 +17,8 @@
                     <img src="<?php //echo base_url() . APPPATH; ?>images/banner.png" width="100%"/>
                 </div>-->
                 <div class="7u">
-                    <h2>Frietonline</h2>                
-                    <?php
-                    foreach ($teksten as $tekst) {
-                        if ($tekst->naam == "Home tekst") {
-                            echo '<p style="font-size:' . $tekst->tekstgrootte . '%">' . $tekst->tekst . '</p>';
-                        }
-                    }
-                    ?>                
+                    <h2>LARS</h2>                
+                          
                 </div>
             </div>
         </div>

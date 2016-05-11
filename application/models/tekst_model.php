@@ -19,8 +19,8 @@ class Tekst_model extends CI_Model {
         $this->db->where('pagina =', $page);
 
         $query = $this->db->get('tekst');
-        $maten = $query->result();
-        return $maten;
+        $teksten = $query->result();
+        return $teksten;
     }
 
     function get($id) {

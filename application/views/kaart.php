@@ -14,17 +14,15 @@
         <div class="container">
             <div class="row">
                 <!--<div class="12u">
-                    <img src="<?php //echo base_url() . APPPATH; ?>images/banner.png" width="100%"/>
+                    <img src="<?php //echo base_url() . APPPATH;  ?>images/banner.png" width="100%"/>
                 </div>-->
                 <div class="7u">
-                    <h2>Frietonline</h2>                
+                    <h2>KAARTJE VO DE LARS</h2>                
                     <?php
-                    foreach ($teksten as $tekst) {
-                        if ($tekst->naam == "Home tekst") {
-                            echo '<p style="font-size:' . $tekst->tekstgrootte . '%">' . $tekst->tekst . '</p>';
-                        }
+                    foreach ($teksten as $val) {
+                        echo $val->id . ": " . $val->tekst . "<br>";
                     }
-                    ?>                
+                    ?>
                 </div>
             </div>
         </div>
