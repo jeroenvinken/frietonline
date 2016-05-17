@@ -6,7 +6,7 @@
 
                 <!-- Logo -->
                 <!--<h1><a href="#" id="logo">Buromas</a></h1>-->
-                <?php echo anchor('admin/index', '<img src="' . base_url() . APPPATH . 'images/logo.png" alt="" id="logo" height="96"/>'); ?>
+                <?php echo anchor('admin/index', '<img src="' . base_url() . APPPATH . 'images/logo_broodje_tekst.png" alt="" id="logo" height="96"/>'); ?>
 
 
                 <!-- Nav -->
