@@ -55,6 +55,10 @@
                         ?>
 
                     </table>
+                    </br>
+                    <hr/>
+                    <h2>Productfoto</h2>
+                    
                     <img src="" alt="" id="productFoto" width="300" style="display: none;" />
                     
 
