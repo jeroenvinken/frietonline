@@ -43,13 +43,16 @@ class Admin extends CI_Controller {
                 $tekst->tekst = $this->input->post(str_replace(' ', '', $tekst->naam));
                 $tekst->tekstgrootte = $this->input->post(str_replace(' ', '', $tekst->naam . "tekstgrootte"));
                 $this->tekst_model->update($tekst);
+                
             }
-
+         
             $data['bewerkt'] = 'Tekst is aangepast!';
             $this->index(true);
         } else {
             $this->noAccess();
         }
     }
-
+    public function isAdmin() {
+        return true;
+    }
 }
