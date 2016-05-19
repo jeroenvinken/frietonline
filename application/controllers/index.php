@@ -14,6 +14,9 @@ class Index extends CI_Controller {
     public function index() {
         $data['title'] = global_bedrijfsnaam . ' - Home';
         $data['pagina'] = 'index';
+        
+        // bezoeker in database zetten
+        $this->bezoeker();
 
         $this->load->model('tekst_model');
         $teksten = $this->tekst_model->getAllByPage("home.php");
