@@ -11,6 +11,11 @@ class Menuitem_model extends CI_Model {
 
         $query = $this->db->get('menuitem');
         $producten = $query->result();
+        
+        $this->load->model('categorie_model');
+        foreach ($producten as $product) {
+            $product->categorie = $this->categorie_model->get($product->categorieId);
+        }
         return $producten;
     }
     

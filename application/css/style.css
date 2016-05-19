@@ -270,13 +270,19 @@ section > :last-child, .last-child
     border-radius:5px;
     -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-size: 120%;
+}
+
+.tableMenu img {
+    height: 40px;
 }
 
 .tableMenu th {padding:18px 28px 18px; text-align: center;}
 
 .tableMenu th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb; height: 12.5px; border-bottom: 1px solid #c8cdcf;}
 
-.tableMenu td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0; text-align: center;}
+.tableMenu td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0; text-align: center; text-shadow: none;}
 
 .tableMenu tr.odd-row td {background:#f6f6f6;}
 
@@ -285,11 +291,11 @@ section > :last-child, .last-child
 .tableMenu td.last {border-right:none;}
 
 /*
-Background gradients are completely unnecessary but a neat effect.
+    Background gradients zijn overbodig ma beetje cool
 */
 
 .tableMenu td {
-    vertical-align: top;
+    vertical-align: middle;
     padding:15px;
     background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
     background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
@@ -305,11 +311,14 @@ Background gradients are completely unnecessary but a neat effect.
     background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
 }
 
-/*
-I know this is annoying, but we need additional styling so webkit will recognize rounded corners on background elements.
-Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
+.singleRow td {
+    font-size: 140%;
+    font-weight: bold;
+    background: rgba(0,0,0,0.05) !important;
+}
 
-And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
+/*
+ Nodig voor gecko browser voor de rounded borders
 */
 
 .tableMenu tr:first-child th.first {
@@ -608,4 +617,16 @@ input[type="reset"].alt:active,
     -ms-filter: blur(4px);
     -o-filter: blur(4px);
     filter: blur(4px);
+}
+
+.kaartTable {
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+
+.kaartTable td{
+    padding: 5px;
+    background-color: white;
+    border: 2px solid black;
 }
