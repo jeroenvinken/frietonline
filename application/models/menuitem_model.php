@@ -7,7 +7,7 @@ class Menuitem_model extends CI_Model {
     }
 
     function getAll() {
-        $this->db->order_by('id', 'asc');
+        $this->db->order_by('categorieId', 'asc');
 
         $query = $this->db->get('menuitem');
         $producten = $query->result();

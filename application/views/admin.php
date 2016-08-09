@@ -13,10 +13,12 @@
                         </header>
                         
                         <?php echo anchor('admin/menuitems_beheren', 'Producten beheren', 'class="button icon fa-arrow-circle-right"');?><br/>
+                        <?php echo anchor('admin/menuitems_aanmaken', 'Producten aanmaken', 'class="button icon fa-arrow-circle-right"');?><br/>
                         <?php echo anchor('admin/teksten_beheren', 'Teksten beheren', 'class="button icon fa-arrow-circle-right"');?><br/>
                         <?php echo anchor('admin/opties_beheren', 'Opties beheren', 'class="button icon fa-arrow-circle-right"');?><br/>
                         <?php echo anchor('admin/categorien_beheren', 'Categoriën beheren', 'class="button icon fa-arrow-circle-right"');?><br/>
                         <?php echo anchor('admin/grafieken', 'Grafieken', 'class="button icon fa-arrow-circle-right"');?><br/>
+                        <?php echo anchor('admin/uitloggen', 'Uitloggen', 'class="button icon fa-arrow-circle-right"');?><br/>
                         
                     </section>
 

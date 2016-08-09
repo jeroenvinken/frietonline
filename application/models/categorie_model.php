@@ -22,6 +22,12 @@ class Categorie_model extends CI_Model {
         $categorien = $query->result();
         return $categorien;
     }
+    
+    function getByName($name) {
+        $this->db->where('naam', $name);
+        $query = $this->db->get('categorie');
+        return $query->row();
+    }
 
     function get($id) {
         $this->db->where('id', $id);
