@@ -76,7 +76,7 @@ class Index extends CI_Controller {
 
     public function kaart() {
         $data['title'] = global_bedrijfsnaam . ' - Kaart';
-        $data['pagina'] = 'index';
+        $data['pagina'] = 'kaart';
 
 
         $this->load->model('tekst_model');

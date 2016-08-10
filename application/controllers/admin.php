@@ -14,7 +14,7 @@ class Admin extends CI_Controller {
     public function index() {
         if ($this->isAdmin()) {
             $data['title'] = global_bedrijfsnaam;
-            $data['pagina'] = 'index';
+            $data['pagina'] = 'admin index';
 
             $partials = array('header' => 'admin_header', 'content' => 'admin', 'footer' => 'main_footer');
             $this->template->load('main_master', $partials, $data);
