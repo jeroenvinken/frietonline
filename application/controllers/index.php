@@ -21,7 +21,12 @@ class Index extends CI_Controller {
         $this->load->model('tekst_model');
         $teksten = $this->tekst_model->getAllByPage("home.php");
         $data['teksten'] = $teksten;
-
+        
+        $this->load->model('openingsuren_model');
+        $openingsuren = $this->openingsuren_model->getAll();
+        $data['openingsuren'] = $openingsuren;
+         
+         
         $partials = array('header' => 'main_header', 'content' => 'index', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
