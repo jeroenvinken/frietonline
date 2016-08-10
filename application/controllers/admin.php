@@ -29,9 +29,97 @@ class Admin extends CI_Controller {
             $data['pagina'] = 'index';
 
             // ophalen alles producten
+            $this->load->model('menuitem_model');
+            $producten = $this->menuitem_model->getAll();
+            $data['producten'] = $producten;
 
             $partials = array('header' => 'admin_header', 'content' => 'admin_productenbeheren', 'footer' => 'main_footer');
             $this->template->load('main_master', $partials, $data);
+        } else {
+            $this->noAccess();
+        }
+    }
+
+    public function editMenuItemNaam() {
+        if ($this->isAdmin()) {
+            $id = $this->input->get('id');
+            $naam = $this->input->get('naam');
+
+            // ophalen alles producten
+            $this->load->model('menuitem_model');
+            $product = $this->menuitem_model->get($id);
+            $product->naam = $naam;
+            $this->menuitem_model->update($product);
+        } else {
+            $this->noAccess();
+        }
+    }
+    public function editMenuItemPrijs() {
+        if ($this->isAdmin()) {
+            $id = $this->input->get('id');
+            $prijs = $this->input->get('prijs');
+
+            // ophalen alles producten
+            $this->load->model('menuitem_model');
+            $product = $this->menuitem_model->get($id);
+            $product->prijs = $prijs;
+            $this->menuitem_model->update($product);
+        } else {
+            $this->noAccess();
+        }
+    }
+    
+    public function editMenuItemVlees() {
+        if ($this->isAdmin()) {
+            $id = $this->input->get('id');
+            $value = $this->input->get('value');
+
+            
+            $this->load->model('menuitem_model');
+            $product = $this->menuitem_model->get($id);
+            $product->vlees = $value;
+            $this->menuitem_model->update($product);
+        } else {
+            $this->noAccess();
+        }
+    }
+    public function editMenuItemVis() {
+        if ($this->isAdmin()) {
+            $id = $this->input->get('id');
+            $value = $this->input->get('value');
+
+            
+            $this->load->model('menuitem_model');
+            $product = $this->menuitem_model->get($id);
+            $product->vis = $value;
+            $this->menuitem_model->update($product);
+        } else {
+            $this->noAccess();
+        }
+    }
+    public function editMenuItemPikantheid() {
+        if ($this->isAdmin()) {
+            $id = $this->input->get('id');
+            $value = $this->input->get('pikantheid');
+
+            
+            $this->load->model('menuitem_model');
+            $product = $this->menuitem_model->get($id);
+            $product->pikantheid = $value;
+            $this->menuitem_model->update($product);
+        } else {
+            $this->noAccess();
+        }
+    }
+    
+    
+
+    public function deletemenuitembyid() {
+        if ($this->isAdmin()) {
+            $id = $this->input->get('id');
+
+            $this->load->model('menuitem_model');
+            $this->menuitem_model->delete($id);
         } else {
             $this->noAccess();
         }
@@ -190,7 +278,7 @@ class Admin extends CI_Controller {
             $newcat = new stdClass();
             $newcat->naam = $categorieNaam;
             $newcatId = $this->categorie_model->insert($newcat);
-            
+
             $newcat->id = $newcatId;
             $cat = $newcat;
         }
@@ -210,10 +298,10 @@ class Admin extends CI_Controller {
 
         $this->load->model('menuitem_model');
         $this->menuitem_model->insert($newprod);
-        
+
         $data['title'] = "Product toegevoegd!";
         $data['toegevoegd'] = $newprod->naam . ' is toegevoegd!';
-        
+
         $partials = array('header' => 'admin_header', 'content' => 'admin_productenaanmaken', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }

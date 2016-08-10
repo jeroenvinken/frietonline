@@ -38,13 +38,7 @@
                             <col width="10%"/>
                             <col width="10%"/>
                         </colgroup>
-                        <tr>
-                            <th>Naam</th>
-                            <th>Prijs</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>                            
-                        </tr>                    
+                                   
 
                         <?php
                         $lastCatId = 0;
@@ -88,10 +82,7 @@
 
                     </table>
                     </br>
-                    <hr/>
-                    <h2>Productfoto</h2>
-
-                    <img src="" alt="" id="productFoto" width="300" style="display: none;" />
+                     
 
 
                 </div>
