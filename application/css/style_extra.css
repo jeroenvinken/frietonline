@@ -266,12 +266,12 @@ input[type="reset"].alt:active,
 }
 
 .toegevoegd p{
-    
+
     margin-left: auto;
     margin-right:auto;
     width: 500px;
-        
-    
+
+
 }
 
 @keyframes slideup
@@ -313,7 +313,7 @@ input[type="reset"].alt:active,
 .pdfImage img{
     width: 150px;
     height: 60px;
-    
+
 }
 
 .tableMenu input {
@@ -323,13 +323,13 @@ input[type="reset"].alt:active,
 
 .wrapperdiv {
     width: 100%;
-    
+
     overflow: hidden; /* will contain if #first is longer than #second */
 }
 .innerleft {
     width: 45%;
     float:left; /* add this */
-    
+
 }
 .innerright {
     padding-left: 10%;
@@ -387,4 +387,36 @@ input[type="reset"].alt:active,
 
 .clickable{
     cursor:pointer;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.openingsurenHome {
+    width: 100%; 
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 40%;
+}
+
+.openingsurenHome td {
+    padding: 0.1em;
+}
+
+.openingsurenHome th {
+    text-align: center;
+    font-size: 130%;
+    padding: 5px;
+    font-weight: 800;
+    border-radius: 15px 15px 0 0;    
+}
+
+.openingsurenHome tr {
+    border-left: 1px;
+    border-right: 1px;
+}
+
+.openingsurenHome tr:first-child {
+    border: 0px;
 }

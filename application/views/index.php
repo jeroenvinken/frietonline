@@ -15,12 +15,12 @@
                     // hier is het bv 9u30 (9u00-18u30)                               
 
                     if (date("i") >= $value->vanMinuut && date("i") <= $value->totMinuut) {
-                        echo "<p style='color: white !important; font-weight: 500; -webkit-text-stroke: 1px rgba(0,255,0,0.7);'>" . 'Nu open!' . "</p>";
+                        echo "<p style='color: green !important; font-weight: 500; -webkit-text-stroke: 1px rgba(0,255,0,0.7);'>" . 'Nu open!' . "</p>";
                     } else {
                         //echo "<p style='color: red; font-weight: 500;'>" . 'Momenteel zijn wij gesloten...' . "</p>";
                     }
                 } else {
-                    echo "<p style='color: white !important; font-weight: 500; -webkit-text-stroke: 1px rgba(255,0,0,0.7);'>" . 'Momenteel zijn wij gesloten...' . "</p>";
+                    echo "<p style='color: red !important; font-weight: 500; -webkit-text-stroke: 1px rgba(255,0,0,0.7);'>" . 'Momenteel zijn wij gesloten...' . "</p>";
                 }
                 break;
             }
@@ -37,11 +37,38 @@
 
     <section class="box special">
         <header class="major">
-            <h2>Frietjes zijn lekker vettig en zout
+            <div class="floatLeft">
+                <h2>Frietjes zijn lekker vettig en zout
                 <br />
                 maar wij zijn toch al dik as fuck</h2>
             <p>Bij <?php echo global_bedrijfsnaam; ?> kan je altijd genieten van lekkerste frietjes.<br />
                 Natte broek garantie!</p>
+            </div>
+            <div>
+                <table class='openingsurenHome'>
+                    <th colspan="2">Openingsuren</th>
+                    <?php 
+                        foreach ($openingsuren as $openingsuur) {
+                            if (date("w") == $openingsuur->dow) {
+                                echo "<tr style='font-weight: 700;'><td>";
+                            } else {
+                                echo "<tr><td>";
+                            }
+                            
+                            echo $openingsuur->dag;
+                            echo "</td><td>";
+                            if ($openingsuur->vanUur == 0 && $openingsuur->vanMinuut == 0 && $openingsuur->totUur == 0 && $openingsuur->totMinuut == 0) {
+                                echo "gesloten";
+                            } else {
+                                echo $openingsuur->vanUur . ":" . sprintf("%02d", $openingsuur->vanMinuut) . " - " . $openingsuur->totUur . ":" . sprintf("%02d", $openingsuur->totMinuut);
+                            }                            
+                            echo "</td></tr>";
+                        }
+                    ?>
+                </table>
+                    
+            </div>
+            
         </header>
         <iframe src="https://maps.google.it/maps?q=<?php echo global_locatie; ?>&output=embed" width="100%" height="460"></iframe>
         <!--<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>-->
