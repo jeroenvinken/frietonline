@@ -1,3 +1,12 @@
+<script>
+
+// shortcut voor gemak
+    $(document).keypress("enter", function (e) {
+        if (e.ctrlKey)
+            window.location.href = site_url + "/admin";
+    });
+</script>
+
 <!-- Banner -->
 <section id="banner">
     <h2><?php echo global_bedrijfsnaam; ?></h2>
@@ -15,12 +24,12 @@
                     // hier is het bv 9u30 (9u00-18u30)                               
 
                     if (date("i") >= $value->vanMinuut && date("i") <= $value->totMinuut) {
-                        echo "<p style='color: green !important; font-weight: 500; -webkit-text-stroke: 1px rgba(0,255,0,0.7);'>" . 'Nu open!' . "</p>";
+                        echo "<p style='color: #01ff01 !important; font-size: 170%; font-weight: 400; -webkit-text-stroke: 1px rgba(0,255,0,0.0);'>" . 'Nu open!' . "</p>";
                     } else {
                         //echo "<p style='color: red; font-weight: 500;'>" . 'Momenteel zijn wij gesloten...' . "</p>";
                     }
                 } else {
-                    echo "<p style='color: red !important; font-weight: 500; -webkit-text-stroke: 1px rgba(255,0,0,0.7);'>" . 'Momenteel zijn wij gesloten...' . "</p>";
+                    echo "<p style='color: red !important; font-weight: 400; font-size: 170%; -webkit-text-stroke: 1px rgba(255,0,0,0.0);'>" . 'Momenteel zijn wij gesloten...' . "</p>";
                 }
                 break;
             }

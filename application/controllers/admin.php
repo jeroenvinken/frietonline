@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
     public function menuitems_beheren() {
         if ($this->isAdmin()) {
             $data['title'] = global_bedrijfsnaam;
-            $data['pagina'] = 'index';
+            $data['pagina'] = 'admin menuitems beheren';
 
             // ophalen alles producten
             $this->load->model('menuitem_model');
@@ -128,7 +128,7 @@ class Admin extends CI_Controller {
     public function menuitems_aanmaken() {
         if ($this->isAdmin()) {
             $data['title'] = global_bedrijfsnaam;
-            $data['pagina'] = 'index';
+            $data['pagina'] = 'admin menuitems aanmaken';
 
             // ophalen alles producten + categorien
             $this->load->model('categorie_model');
@@ -186,7 +186,7 @@ class Admin extends CI_Controller {
     public function noAccess() {
 
         $data['title'] = global_bedrijfsnaam;
-        $data['pagina'] = 'login';
+        $data['pagina'] = 'admin login';
 
         $partials = array('header' => 'admin_header', 'content' => 'admin_login', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -194,8 +194,8 @@ class Admin extends CI_Controller {
 
     public function grafieken() {
         if ($this->isAdmin()) {
-            $data['title'] = global_bedrijfsnaam . ' - Bureaustoelen';
-            $data['pagina'] = 'Teksten bewerken';
+            $data['title'] = global_bedrijfsnaam . '';
+            $data['pagina'] = 'admin grafieken';
 
             $this->load->model('tekst_model');
             $teksten = $this->tekst_model->getAll();

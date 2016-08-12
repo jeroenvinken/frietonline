@@ -41,7 +41,8 @@
 
 .tableMenu td {
     vertical-align: middle;
-    padding:15px;
+    //padding:15px;
+    padding: 0.25em 0.25em;
     background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
     background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
 }
@@ -383,6 +384,7 @@ input[type="reset"].alt:active,
 .grayscale100{
     -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
     filter: grayscale(100%);
+    opacity: 0.4;
 }
 
 .clickable{

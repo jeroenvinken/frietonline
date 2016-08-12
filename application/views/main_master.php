@@ -35,7 +35,9 @@
         </script>        
 
     </head>
-    <body class="landing">
+    <body <?php if ($pagina == 'index') {
+    echo 'class="landing"';
+} ?>>
         <?php echo $header; ?>
         <?php echo $content; ?>
         <?php echo $footer; ?>

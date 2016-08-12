@@ -54,7 +54,7 @@
         var value = $("#productPrijsInput" + id).val();
         $("#productPrijsInput" + id).hide();
         $("#productPrijs" + id).show();
-        $("#productPrijs" + id).text(value);
+        $("#productPrijs" + id).text('\u20AC ' + value);
 
         $.ajax({type: "GET",
             url: site_url + "/admin/editMenuItemPrijs",
@@ -125,7 +125,7 @@
         }
 
         $("#menuitempikantheid" + id).attr('pikantheid', teller);
-        
+
         $.ajax({type: "GET",
             url: site_url + "/admin/editMenuItemPikantheid",
             data: {id: id, pikantheid: teller},
@@ -178,11 +178,8 @@
 
                             <label style="font-weight: 100;" id="product<?php echo $product->id; ?>" onclick="showProductInput(<?php echo $product->id; ?>)"><?php echo $product->naam; ?></label>
                             <input style="display: none;" type="text" id="productInput<?php echo $product->id; ?>" value="<?php echo $product->naam; ?>" onkeydown="javascript: if (event.keyCode == 13)
-                                        editProductInput(<?php echo $product->id; ?>)"/></td>
-
-
-
-
+                                            editProductInput(<?php echo $product->id; ?>)"/></td>
+                    
                             <?php
                             echo "</td>";
 
@@ -190,9 +187,9 @@
                             //echo "&euro; " . number_format(number_format($product->prijs, 2, ',', '.'), 2, ',', '.');
                             ?>
 
-                            <label style="font-weight: 100;" id="productPrijs<?php echo $product->id; ?>" onclick="showProductPrijsInput(<?php echo $product->id; ?>)"><?php echo number_format($product->prijs, 2, ',', '.'); ?></label>
+                            <label style="font-weight: 100;" id="productPrijs<?php echo $product->id; ?>" onclick="showProductPrijsInput(<?php echo $product->id; ?>)">&euro; <?php echo number_format($product->prijs, 2, ',', '.'); ?></label>
                             <input style="display: none;" type="text" id="productPrijsInput<?php echo $product->id; ?>" value="<?php echo number_format($product->prijs, 2, ',', '.'); ?>" onkeydown="javascript: if (event.keyCode == 13)
-                                        editProductPrijsInput(<?php echo $product->id; ?>)"/></td>
+                                            editProductPrijsInput(<?php echo $product->id; ?>)"/></td>
 
                             <?php
                             echo "</td>";
