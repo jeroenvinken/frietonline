@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 <script>
 
 // shortcut voor gemak
@@ -10,7 +12,12 @@
         $("#productFoto").attr('src', fotoPad);
         $("#productFoto").toggle();
     }
+
+    $(function () {
+        $(document).tooltip();
+    });
 </script>
+
 
 
 <!-- Features -->
@@ -19,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <!--<div class="12u">
-                    <img src="<?php //echo base_url() . APPPATH;     ?>images/banner.png" width="100%"/>
+                    <img src="<?php //echo base_url() . APPPATH;      ?>images/banner.png" width="100%"/>
                 </div>-->
                 <div class="12u">
                     <h2>Onze kaart</h2>                    
@@ -37,7 +44,7 @@
                             <col width="10%"/>
                             <col width="10%"/>
                         </colgroup>
-                                   
+
 
                         <?php
                         $lastCatId = 0;
@@ -45,43 +52,42 @@
                             if ($lastCatId != $product->categorieId) {
                                 $lastCatId = $product->categorieId;
                                 echo "<tr class='singleRow'><td colspan='5'>" . $product->categorie->naam . "</td></tr>";
-                            } 
-                                echo "<tr>";
+                            }
+                            echo "<tr>";
 
-                                echo "<td style='cursor:pointer;' title='$product->omschrijving' onclick='toonFoto(\"" . base_url() . APPPATH . "$product->fotoPad\")'>";
-                                echo $product->naam;
-                                echo "</td>";
+                            echo "<td style='cursor:pointer;' title='$product->omschrijving' onclick='toonFoto(\"" . base_url() . APPPATH . "$product->fotoPad\")'>";
+                            echo $product->naam;
+                            echo "</td>";
 
-                                echo "<td>";
-                                echo "&euro; " . number_format($product->prijs, 2, ',', '.');
-                                echo "</td>";
+                            echo "<td>";
+                            echo "&euro; " . number_format($product->prijs, 2, ',', '.');
+                            echo "</td>";
 
-                                echo "<td>";
-                                if ($product->vis == true) {
-                                    echo "<img src='" . base_url() . APPPATH . "images/fish.png' title='Dit product bevat vis.'/>";
-                                }
-                                echo "</td>";
+                            echo "<td>";
+                            if ($product->vis == true) {
+                                echo "<img src='" . base_url() . APPPATH . "images/fish.png' title='Dit product bevat vis.'/>";
+                            }
+                            echo "</td>";
 
-                                echo "<td>";
-                                if ($product->vlees == true) {
-                                    echo "<img src='" . base_url() . APPPATH . "images/meat.png' title='Dit product bevat vlees.'/>";
-                                }
-                                echo "</td>";
+                            echo "<td>";
+                            if ($product->vlees == true) {
+                                echo "<img src='" . base_url() . APPPATH . "images/meat.png' title='Dit product bevat vlees.'/>";
+                            }
+                            echo "</td>";
 
-                                echo "<td>";
-                                if ($product->pikantheid > 0) {
-                                    echo "<img src='" . base_url() . APPPATH . "images/pikant-$product->pikantheid.png' title='Dit product heeft een pikantheidsniveau van $product->pikantheid.'/>";
-                                }
-                                echo "</td>";
+                            echo "<td>";
+                            if ($product->pikantheid > 0) {
+                                echo "<img src='" . base_url() . APPPATH . "images/pikant-$product->pikantheid.png' title='Dit product heeft een pikantheidsniveau van $product->pikantheid.'/>";
+                            }
+                            echo "</td>";
 
-                                echo "</tr>";
-                            
+                            echo "</tr>";
                         }
                         ?>
 
                     </table>
                     </br>
-                     
+
 
 
                 </div>

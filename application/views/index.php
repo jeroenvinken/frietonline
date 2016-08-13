@@ -52,7 +52,7 @@
                 maar wij zijn toch al dik as fuck</h2>
                 <hr/>
             <div class="fb-like" data-href="<?php echo global_facebookpage; ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-            <br/><input type="button" style="font-size: 120%; margin-top: 1em; width: 85%;" value="Bekijk onze kaart" />
+            <br/><?php echo anchor('index/kaart', '<input type="button" style="font-size: 120%; margin-top: 1em; width: 85%;" value="Bekijk onze kaart" />'); ?>
             </div>
             <div>
                 <table class='openingsurenHome'>
