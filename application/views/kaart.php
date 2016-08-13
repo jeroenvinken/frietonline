@@ -22,8 +22,7 @@
                     <img src="<?php //echo base_url() . APPPATH;     ?>images/banner.png" width="100%"/>
                 </div>-->
                 <div class="12u">
-                    <h2>Onze kaart:</h2>
-                    <hr/>
+                    <h2>Onze kaart</h2>                    
                     <?php
                     foreach ($teksten as $val) {
                         echo $val->tekst . "<br>";

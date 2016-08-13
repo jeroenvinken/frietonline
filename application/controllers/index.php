@@ -69,11 +69,15 @@ class Index extends CI_Controller {
 
     public function contact() {
         $data['title'] = global_bedrijfsnaam . ' - Contact';
-        $data['pagina'] = 'index';
+        $data['pagina'] = 'contact';
 
         $this->load->model('tekst_model');
         $teksten = $this->tekst_model->getAllByPage("info.php");
         $data['teksten'] = $teksten;
+        
+        $this->load->model('openingsuren_model');
+        $openingsuren = $this->openingsuren_model->getAll();
+        $data['openingsuren'] = $openingsuren;
 
         $partials = array('header' => 'main_header', 'content' => 'contact', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);

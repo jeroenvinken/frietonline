@@ -1,41 +1,14 @@
-<!-- Footer -->
-<div id="footer-wrapper">
-    <footer id="footer" class="container">
-        <div class="row">
-            <div class="8u">
-
-                <!-- Links -->
-                <section>
-                    <h2>Onlangs bekeken</h2>
-                    <div class="3u">
-                        <!-- Feature #1 -->
-                        <section>
-                            <?php echo anchor('serie/index/' . '1', '<img src="' . base_url() . APPPATH . 'images/stoel.png' . '" alt="Foto van de stoel">', array('class' => 'onlangsbekekenimage')); ?>
-                            
-                        </section>
-                    </div> 
-                </section>
-
-            </div>
-            <div class="4u">
-
-                <!-- Blurb -->
-                <section>
-                    <h2>Inschrijven voor nieuwsbrief</h2>
-                    <p>
-                        Ontvang onze nieuwsbrief met nieuwe info over bureaumateriaal!                        
-                    </p>
-                    
-                    <input type="text" class="inputNieuwsbrief" placeholder="mail@email.com"/>
-                </section>
-
-            </div>
-        </div>
-    </footer>
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+        <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+        <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
 </div>
-
-<!-- Copyright -->
-<div id="copyright">
-    &copy; Buromas. All rights reserved. | Design: Jeroen Vinken & <a href="http://html5up.net">HTML5 UP</a>
-</div>
-

@@ -5,52 +5,50 @@
             var id = $(this).attr('id').replace("tekstgrootte", "");
             $("#" + id).css("font-size", $(this).val() + "%");
         });
-
-
-    });
-
-    // vlees klik handler
-    $('#vleesimg').click(function () {
-        if ($(this).hasClass('grayscale100')) {
-            $(this).removeClass('grayscale100');
-            $("#vlees").attr('checked', true);
-        } else {
-            $(this).addClass('grayscale100');
-            $("#vlees").attr('checked', false);            
-        }
-    });
-
-    // vis klik handler
-    $('#visimg').click(function () {
-        if ($(this).hasClass('grayscale100')) {
-            $(this).removeClass('grayscale100');
-            $("#vis").attr('checked', true);
-        } else {
-            $(this).addClass('grayscale100');
-            $("#vis").attr('checked', false);
-        }
-    });
-    // pikant klik handler
-    var teller = 0;
-    $('#pikantimg').click(function () {
-        teller++;        
-        if (teller > 5) {
-            // cycle complete
-            teller = 0;
-        }
         
-        $(this).attr('src', '<?php echo base_url() . APPPATH; ?>images/pikant-' + teller + '.png');
-        
-        if (teller == 0) {
-            // niet pikant
-            $(this).addClass('grayscale100');
-            $(this).attr('src', '<?php echo base_url() . APPPATH; ?>images/pikant-1.png');
-        } else if ($(this).hasClass('grayscale100')) {
-            $(this).removeClass('grayscale100');
-        }
-        
-        $("#pikant").val(teller);
+        // vlees klik handler
+        $('#vleesimg').click(function () {            
+            if ($(this).hasClass('grayscale100')) {
+                $(this).removeClass('grayscale100');
+                $("#vlees").attr('checked', true);
+            } else {
+                $(this).addClass('grayscale100');
+                $("#vlees").attr('checked', false);
+            }
+        });
 
+        // vis klik handler
+        $('#visimg').click(function () {
+            if ($(this).hasClass('grayscale100')) {
+                $(this).removeClass('grayscale100');
+                $("#vis").attr('checked', true);
+            } else {
+                $(this).addClass('grayscale100');
+                $("#vis").attr('checked', false);
+            }
+        });
+        // pikant klik handler
+        var teller = 0;
+        $('#pikantimg').click(function () {
+            teller++;
+            if (teller > 5) {
+                // cycle complete
+                teller = 0;
+            }
+
+            $(this).attr('src', '<?php echo base_url() . APPPATH; ?>images/pikant-' + teller + '.png');
+
+            if (teller == 0) {
+                // niet pikant
+                $(this).addClass('grayscale100');
+                $(this).attr('src', '<?php echo base_url() . APPPATH; ?>images/pikant-1.png');
+            } else if ($(this).hasClass('grayscale100')) {
+                $(this).removeClass('grayscale100');
+            }
+
+            $("#pikant").val(teller);
+
+        });
     });
 </script>
 

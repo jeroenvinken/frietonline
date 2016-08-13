@@ -7,7 +7,14 @@
                         <div class="title">
                             <h2>Inloggen</h2>
                             <br/>
-                            <p>Gelieve in te loggen om verder te gaan.</p>
+                            <?php 
+                            if ($foutmelding != "") {
+                                echo "<p style='color: red;'>" . $foutmelding . "</p>";
+                            } else {
+                                echo "<p>Gelieve in te loggen om verder te gaan.</p>";
+                            }                            
+                            ?>
+                            
                             <br/>
                         </div>
 

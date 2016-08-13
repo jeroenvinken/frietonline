@@ -183,10 +183,12 @@ class Admin extends CI_Controller {
         }
     }
 
-    public function noAccess() {
+    public function noAccess($foutmelding = "") {
 
         $data['title'] = global_bedrijfsnaam;
         $data['pagina'] = 'admin login';
+        
+        $data['foutmelding'] = $foutmelding;
 
         $partials = array('header' => 'admin_header', 'content' => 'admin_login', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -255,7 +257,7 @@ class Admin extends CI_Controller {
             $this->index();
         } else {
 // Geen toegang
-            $this->noAccess();
+            $this->noAccess('Verkeerde login gegevens!');
         }
     }
 
