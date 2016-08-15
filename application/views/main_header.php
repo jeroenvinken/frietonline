@@ -12,6 +12,7 @@
                 <li><?php echo anchor('index/index', 'Home'); ?></li>
                 <li><?php echo anchor('index/kaart', 'Kaart'); ?></li>
                 <li><?php echo anchor('index/contact', 'Contact'); ?></li>
+                <li><?php echo anchor('index/foto_album', 'Foto\'s'); ?></li>
             </ul>
         </nav>
     </header>

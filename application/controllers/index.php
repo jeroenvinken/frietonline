@@ -55,18 +55,6 @@ class Index extends CI_Controller {
         $id = $this->bezoekerhit_model->insert($bezoeker);
     }
 
-    public function lars() {
-        $data['title'] = global_bedrijfsnaam . ' - Lars';
-        $data['pagina'] = 'index';
-
-        $this->load->model('tekst_model');
-        $teksten = $this->tekst_model->getAllByPage("lars.php");
-        $data['teksten'] = $teksten;
-
-        $partials = array('header' => 'main_header', 'content' => 'Lars', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data);
-    }
-
     public function contact() {
         $data['title'] = global_bedrijfsnaam . ' - Contact';
         $data['pagina'] = 'contact';
@@ -101,4 +89,12 @@ class Index extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    public function foto_album() {
+        $data['title'] = global_bedrijfsnaam . ' - Foto\'s';
+        $data['pagina'] = 'foto_album';
+        
+        $partials = array('header' => 'main_header', 'content' => 'foto_album', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
+    }
+    
 }

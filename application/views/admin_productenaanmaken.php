@@ -5,9 +5,8 @@
             var id = $(this).attr('id').replace("tekstgrootte", "");
             $("#" + id).css("font-size", $(this).val() + "%");
         });
-        
         // vlees klik handler
-        $('#vleesimg').click(function () {            
+        $('#vleesimg').click(function () {
             if ($(this).hasClass('grayscale100')) {
                 $(this).removeClass('grayscale100');
                 $("#vlees").attr('checked', true);
@@ -16,7 +15,6 @@
                 $("#vlees").attr('checked', false);
             }
         });
-
         // vis klik handler
         $('#visimg').click(function () {
             if ($(this).hasClass('grayscale100')) {
@@ -37,7 +35,6 @@
             }
 
             $(this).attr('src', '<?php echo base_url() . APPPATH; ?>images/pikant-' + teller + '.png');
-
             if (teller == 0) {
                 // niet pikant
                 $(this).addClass('grayscale100');
@@ -47,8 +44,26 @@
             }
 
             $("#pikant").val(teller);
-
         });
+
+        function showConfirmation() {
+            $("#confirmMessage").show();
+            var opacityValue = $("#confirmMessage").css("opacity");
+            if (opacityValue == 1) {
+                $("#confirmMessage").animate({
+                    opacity: 0,
+                }, 3800, function () {
+                    // animation complete                    
+                    $("#confirmMessage").hide();
+                    $("#confirmMessage").css("opacity", "1");
+                });
+            }
+        }
+
+<?php
+echo "showConfirmation();";
+?>
+
     });
 </script>
 
@@ -57,13 +72,20 @@
     <?php
     // message artikel toegevoegd
     if (isset($toegevoegd)) {
-        echo "<div class='toegevoegd'><p>" . $toegevoegd . "</p></div>";
+        //echo "<div class='toegevoegd'><p>" . $toegevoegd . "</p></div>";
     }
     ?>
     <div id="content">
         <div class="container">
             <div class="row">
                 <div class="12u">
+                    <?php
+                    // message artikel toegevoegd
+                    if (isset($toegevoegd)) {
+                        echo '<div class="hiddenConfirmBox" id="confirmMessage"><p>' . $toegevoegd . '</p></div>';
+                    }
+                    ?>
+
 
                     <!-- Box #1 -->
                     <section>

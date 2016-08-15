@@ -422,3 +422,27 @@ input[type="reset"].alt:active,
 .openingsurenHome tr:first-child {
     border: 0px;
 }
+
+.hiddenConfirmBox {
+    display: none;
+    position: fixed;
+    top: 5em;
+    left: 40%;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    border-radius: 25px;
+    background-color: rgba(0,166,0,0.75);
+    text-align: center;
+}
+
+.hiddenConfirmBox p{
+   padding: 10px;
+   margin: 0px;
+}
+
+i{
+    padding-right: 5px;
+    
+}

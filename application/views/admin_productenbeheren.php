@@ -29,6 +29,17 @@
         $("#productInput" + id).css("display", "inline");
         $("#productInput" + id).css("text-align", "center");
         $("#product" + id).hide();
+        //$("#productInput" + id).focus();
+        var element = $("#productInput" + id);
+
+        // Multiply by 2 to ensure the cursor always ends up at the end;
+        // Opera sometimes sees a carriage return as 2 characters.
+        var strLength = element.val().length * 2;
+
+        element.focus();
+        element[0].setSelectionRange(strLength, strLength);
+
+
     }
     function editProductInput(id) {
         var value = $("#productInput" + id).val();
@@ -40,7 +51,17 @@
             url: site_url + "/admin/editMenuItemNaam",
             data: {id: id, naam: value},
             success: function (result) {
-
+                $("#confirmMessage").show();
+                var opacityValue = $("#confirmMessage").css("opacity");
+                if (opacityValue == 1) {
+                    $("#confirmMessage").animate({
+                        opacity: 0,
+                    }, 3800, function () {
+                        // animation complete                    
+                        $("#confirmMessage").hide();
+                        $("#confirmMessage").css("opacity", "1");
+                    });
+                }
             }
         });
     }
@@ -49,6 +70,15 @@
         $("#productPrijsInput" + id).css("display", "inline");
         $("#productPrijsInput" + id).css("text-align", "center");
         $("#productPrijs" + id).hide();
+        //cursor aan einde van textbox
+        var element = $("#productPrijsInput" + id);
+
+        // Multiply by 2 to ensure the cursor always ends up at the end;
+        // Opera sometimes sees a carriage return as 2 characters.
+        var strLength = element.val().length * 2;
+
+        element.focus();
+        element[0].setSelectionRange(strLength, strLength);
     }
     function editProductPrijsInput(id) {
         var value = $("#productPrijsInput" + id).val();
@@ -60,7 +90,17 @@
             url: site_url + "/admin/editMenuItemPrijs",
             data: {id: id, prijs: value},
             success: function (result) {
-
+                $("#confirmMessage").show();
+                var opacityValue = $("#confirmMessage").css("opacity");
+                if (opacityValue === 1) {
+                    $("#confirmMessage").animate({
+                        opacity: 0,
+                    }, 2500, function () {
+                        // animation complete                    
+                        $("#confirmMessage").hide();
+                        $("#confirmMessage").css("opacity", "1");
+                    });
+                }
             }
         });
     }
@@ -70,8 +110,10 @@
         if ($("#menuitemvis" + id).hasClass('grayscale100')) {
             $("#menuitemvis" + id).removeClass('grayscale100');
             hasVis = 1;
+            $("#menuitemvis" + id).attr('title', "Dit product bevat vis.");
         } else {
             $("#menuitemvis" + id).addClass('grayscale100');
+            $("#menuitemvis" + id).attr('title', "Dit product bevat geen vis.");
             hasVis = 0;
         }
 
@@ -88,9 +130,11 @@
         var hasVlees = 0;
         if ($("#menuitemvlees" + id).hasClass('grayscale100')) {
             $("#menuitemvlees" + id).removeClass('grayscale100');
+            $("#menuitemvlees" + id).attr('title', "Dit product bevat vlees.");
             hasVlees = 1;
         } else {
             $("#menuitemvlees" + id).addClass('grayscale100');
+            $("#menuitemvlees" + id).attr('title', "Dit product bevat geen vlees.");
             hasVlees = 0;
         }
 
@@ -109,13 +153,14 @@
         var teller = $("#menuitempikantheid" + id).attr('pikantheid');
         teller++;
 
+
         if (teller > 5) {
             // cycle complete
             teller = 0;
         }
 
         $("#menuitempikantheid" + id).attr('src', '<?php echo base_url() . APPPATH; ?>images/pikant-' + teller + '.png');
-
+        $("#menuitempikantheid" + id).attr('title', "Dit product heeft een pikantheidsniveau van " + teller +".");
         if (teller == 0) {
             // niet pikant
             $("#menuitempikantheid" + id).addClass('grayscale100');
@@ -149,6 +194,10 @@
         <div class="container">
             <div class="row">
                 <div class="12u">
+                    <div class="hiddenConfirmBox" id="confirmMessage">
+                        <p>Opgeslagen!</p>
+                    </div>
+
                     <h2>Onze kaart:</h2>
                     <hr/>
 
@@ -179,7 +228,7 @@
                             <label style="font-weight: 100;" id="product<?php echo $product->id; ?>" onclick="showProductInput(<?php echo $product->id; ?>)"><?php echo $product->naam; ?></label>
                             <input style="display: none;" type="text" id="productInput<?php echo $product->id; ?>" value="<?php echo $product->naam; ?>" onkeydown="javascript: if (event.keyCode == 13)
                                             editProductInput(<?php echo $product->id; ?>)"/></td>
-                    
+
                             <?php
                             echo "</td>";
 
@@ -196,21 +245,25 @@
 
                             echo "<td>";
                             //if ($product->vis == true) {
-                            echo "<img src='" . base_url() . APPPATH . "images/fish.png' title='Dit product bevat vis.' class='clickable ";
+                            echo "<img src='" . base_url() . APPPATH . "images/fish.png' class='clickable ";
                             if ($product->vis != true) {
-                                echo "grayscale100";
+                                echo "grayscale100' title='Dit product bevat geen vis.'";
+                            } else {
+                                echo "' title='Dit product bevat vis.'";
                             }
-                            echo "' id='menuitemvis$product->id' onclick='editproductvis($product->id);'/>";
+                            echo " id='menuitemvis$product->id' onclick='editproductvis($product->id);'/>";
                             //}
                             echo "</td>";
 
                             echo "<td>";
                             //if ($product->vlees == true) {
-                            echo "<img src='" . base_url() . APPPATH . "images/meat.png' title='Dit product bevat vlees.' class='clickable ";
+                            echo "<img src='" . base_url() . APPPATH . "images/meat.png' class='clickable ";
                             if ($product->vlees != true) {
-                                echo "grayscale100";
+                                echo "grayscale100' title='Dit product bevat geen vlees.'";
+                            } else {
+                                echo "' title='Dit product bevat vlees.'";
                             }
-                            echo "' id='menuitemvlees$product->id' onclick='editproductvlees($product->id);'/>";
+                            echo " id='menuitemvlees$product->id' onclick='editproductvlees($product->id);'/>";
                             //}
                             echo "</td>";
 
