@@ -80,6 +80,6 @@
             </div>
             
         </header>
-        <iframe src="https://maps.google.it/maps?q=<?php echo global_locatie; ?>&output=embed" width="100%" height="460"></iframe>
+        <iframe src="https://maps.google.it/maps?q=<?php echo global_locatie; ?>&output=embed&scrollwheel=false" width="100%" height="460"></iframe>
         <!--<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>-->
     </section>

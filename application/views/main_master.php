@@ -25,15 +25,14 @@
 
 
         <script src="<?php echo base_url() . APPPATH; ?>js/jquery-1.6.2.min.js"></script>  
-
-        <script type="text/javascript" src="<?php echo base_url() . APPPATH; ?>js/jquery-ui-1.8.16.custom.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/ui-lightness/jquery-ui-1.8.16.custom.css" />
+        
 
 
         <script type="text/javascript">
             var site_url = '<?php echo site_url(); ?>';
             var img_url = '<?php echo base_url() . APPPATH; ?>';
-        </script>   
+        </script>  
+        
 
 
 

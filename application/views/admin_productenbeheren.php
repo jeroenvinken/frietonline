@@ -214,7 +214,7 @@
 
 
                         <?php
-                        $lastCatId = 0;
+                        $lastCatId = -1;
                         foreach ($producten as $product) {
                             if ($lastCatId != $product->categorieId) {
                                 $lastCatId = $product->categorieId;

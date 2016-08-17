@@ -81,7 +81,7 @@ class Index extends CI_Controller {
         $data['teksten'] = $teksten;
 
         $this->load->model('menuitem_model');
-        $producten = $this->menuitem_model->getAll();
+        $producten = $this->menuitem_model->getAllForKaart();
         $data['producten'] = $producten;
 
 
@@ -97,4 +97,11 @@ class Index extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
     
+    public function broodje_samenstellen() {
+        $data['title'] = global_bedrijfsnaam . ' - Broodje samenstellen';
+        $data['pagina'] = 'broodje_samenstellen';
+        
+        $partials = array('header' => 'main_header', 'content' => 'broodje_samenstellen', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
+    }
 }
