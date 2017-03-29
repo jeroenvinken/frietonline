@@ -21,7 +21,7 @@ class Menuitem_model extends CI_Model {
 
     function getAllByCategorieId($catId) {
         $this->db->order_by('id', 'asc');
-        $this->db->where('categeorieId =', $catId);
+        $this->db->where('categorieId =', $catId);
 
         $query = $this->db->get('menuitem');
         $menuitems = $query->result();
@@ -45,6 +45,16 @@ class Menuitem_model extends CI_Model {
             }
             $teller++;
         }
+        return $producten;
+    }
+    
+    // Get all data for putting together the greatest sandwich of all time
+    function getAllComponentsForSamenstellen() {
+        $producten = new stdClass();
+        $producten->broodjes = $this->getAllByCategorieId(1);
+        $producten->groenten = $this->getAllByCategorieId(2);
+        $producten->snacks = $this->getAllByCategorieId(3);
+        $producten->beleg = $this->getAllByCategorieId(4);
         return $producten;
     }
 

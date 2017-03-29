@@ -446,3 +446,18 @@ i{
     padding-right: 5px;
     
 }
+
+/* step */
+.step {
+    display: none;
+}
+
+.step-selected {
+    display: block !important;
+}
+
+.selectbutton {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid rgba(0,166,0,0.75) !important;
+}

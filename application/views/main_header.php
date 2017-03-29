@@ -13,7 +13,7 @@
                 <li><?php echo anchor('index/kaart', 'Kaart'); ?></li>
                 <li><?php echo anchor('index/contact', 'Contact'); ?></li>
                 <li><?php echo anchor('index/foto_album', 'Foto\'s'); ?></li>
-                <li><?php echo anchor('index/broodje_samenstellen', 'Broodje samenstellen'); ?></li>
+                <li><?php echo anchor('samenstellen/index', 'Broodje samenstellen'); ?></li>
 
             </ul>
         </nav>
